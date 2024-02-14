@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-enum TabLightItem: Hashable {
+public enum TabLightItem: Hashable {
     case home, favorites, profile
     
-    var iconName: String {
+    public var iconName: String {
         switch self {
         case .home:
             return "house"
@@ -21,7 +21,7 @@ enum TabLightItem: Hashable {
         }
     }
     
-    var title: String {
+    public var title: String {
         switch self {
         case .home:
             return "Home"
@@ -32,7 +32,7 @@ enum TabLightItem: Hashable {
         }
     }
     
-    var color: Color {
+    public var color: Color {
         switch self {
         case .home:
             return Color.red
