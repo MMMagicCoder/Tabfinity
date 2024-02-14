@@ -19,21 +19,6 @@ struct TabLight: View {
     }
 }
 
-struct TabLight_Previews: PreviewProvider {
-    static let tabs: [TabLightItem] = [
-        .home, .favorites, .profile
-    ]
-    
-    static var previews: some View {
-        VStack {
-            Spacer()
-            
-            TabLight(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!, showLight: tabs.first!)
-        }
-    }
-}
-
-
 extension TabLight{
     private func tabView(tab: TabLightItem) -> some View {
             ZStack {

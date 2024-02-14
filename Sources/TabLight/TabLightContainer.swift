@@ -21,19 +21,3 @@ public struct TabLightContainer<Content: View>: View {
         })
     }
 }
-
-struct TabLightContainer_Previews: PreviewProvider {
-    static let tabs: [TabLightItem] = [
-        .home, .favorites, .profile
-    ]
-    
-    static var previews: some View {
-        VStack {
-            Spacer()
-            
-            TabLightContainer(selection: .constant(tabs.first!)) {
-                Color.red
-            }
-        }
-    }
-}
