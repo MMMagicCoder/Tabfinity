@@ -7,8 +7,39 @@
 
 import SwiftUI
 
-public struct TabLightItem: Hashable {
-        let iconName: String
-        let title: String
-        let color: Color
+public enum TabLightItem: Hashable {
+    case home, favorites, profile
+    
+    public var iconName: String {
+        switch self {
+        case .home:
+            return "house"
+        case .favorites:
+            return "heart"
+        case .profile:
+            return "person"
+        }
+    }
+    
+    public var title: String {
+        switch self {
+        case .home:
+            return "Home"
+        case .favorites:
+            return "Favorites"
+        case .profile:
+            return "Profile"
+        }
+    }
+    
+    public var color: Color {
+        switch self {
+        case .home:
+            return Color.red
+        case .favorites:
+            return Color.blue
+        case .profile:
+            return Color.green
+        }
+    }
 }
