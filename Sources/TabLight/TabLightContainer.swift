@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TabLightContainer<Content: View>: View {
+public struct TabLightContainer<Content: View>: View {
     @Binding var selection: TabLightItem
     let content: Content
     @State private var tabs: [TabLightItem] = []
@@ -10,7 +10,7 @@ struct TabLightContainer<Content: View>: View {
         self.content = content()
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: .bottom) {
             content
                 .ignoresSafeArea()
