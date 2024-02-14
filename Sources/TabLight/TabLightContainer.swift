@@ -1,11 +1,11 @@
 import SwiftUI
 
 public struct TabLightContainer<Content: View>: View {
-    @Binding var selection: TabLightItem
-    let content: Content
+    @Binding public var selection: TabLightItem
+    public let content: Content
     @State private var tabs: [TabLightItem] = []
     
-    init(selection: Binding<TabLightItem>, @ViewBuilder content: () -> Content) {
+    public init(selection: Binding<TabLightItem>, @ViewBuilder content: () -> Content) {
         self._selection = selection
         self.content = content()
     }
@@ -22,7 +22,7 @@ public struct TabLightContainer<Content: View>: View {
     }
 }
 
-struct ThirdCustomTabBarContainerView_Previews: PreviewProvider {
+struct TabLightContainer_Previews: PreviewProvider {
     static let tabs: [TabLightItem] = [
         .home, .favorites, .profile
     ]
