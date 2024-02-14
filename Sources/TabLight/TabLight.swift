@@ -114,7 +114,6 @@ extension View {
     }
 }
 
-
 struct TabRectangleGeometrySizePreferencedKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
     static func reduce(value: inout Value, nextValue: () -> Value) {
