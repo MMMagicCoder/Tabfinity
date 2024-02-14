@@ -15,7 +15,7 @@ struct TabLightPreferencedKey: PreferenceKey {
     }
 }
 
-struct ThirdTabBarItemViewModifier: ViewModifier {
+struct TabLightItemViewModifier: ViewModifier {
     let tab: TabLightItem
     @Binding var selection: TabLightItem
     
@@ -27,8 +27,8 @@ struct ThirdTabBarItemViewModifier: ViewModifier {
 }
 
 extension View {
-    func thirdTabBarItem(tab: TabLightItem, selection: Binding<TabLightItem>) -> some View {
+    public func tabLightItem(tab: TabLightItem, selection: Binding<TabLightItem>) -> some View {
         self
-            .modifier(ThirdTabBarItemViewModifier(tab: tab, selection: selection))
+            .modifier(TabLightItemViewModifier(tab: tab, selection: selection))
     }
 }
