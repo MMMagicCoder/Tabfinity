@@ -1,24 +1,4 @@
-//
-//  File.swift
-//  
-//
-//  Created by mohammadmahdi moayeri on 2/14/24.
-//
-
 import SwiftUI
-
-struct LightShape: View {
-    @State var length: CGFloat = 100
-    var body: some View {
-        VStack(spacing: 3) {
-            Lamp()
-                    .frame(width: 50, height: 10, alignment: .center)
-            Light()
-                .frame(width: 50, height: 50, alignment: .center)
-                .foregroundStyle(Color.yellow.opacity(0.3))
-        }
-    }
-}
 
 struct Light: Shape {
     func path(in rect: CGRect) -> Path {
