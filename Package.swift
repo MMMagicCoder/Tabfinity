@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "TabLight",
+    name: "Tabfinity",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         .library(
-            name: "TabLight",
-            targets: ["TabLight"]),
+            name: "Tabfinity",
+            targets: ["Tabfinity"]),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "TabLight",
+            name: "Tabfinity",
             dependencies:[])
     ]
 )
