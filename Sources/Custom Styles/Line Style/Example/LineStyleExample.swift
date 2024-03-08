@@ -1,13 +1,11 @@
 import SwiftUI
 
-struct LampStyleExample: View {
-    
+struct LineStyleExample: View {
     @EnvironmentObject private var item: TabfinityItemSize
     @Namespace private var namespace
     
     @State private var selection: Item = .home
-    @State private var showLight: Item = .home
-    @State private var moveLamp: Item = .home
+    @State private var localSelection: Item = .home
     
     var body: some View {
         Tabfinity(selection: $selection) {
@@ -21,31 +19,20 @@ struct LampStyleExample: View {
                 .tabfinityItem(for: Item.profile)
         }
         .tabfinityContainer(style: LampContainerStyle())
-        .tabfinityItem(style: LampItemStyle(
-            moveLamp: $moveLamp,
-            showLight: $showLight,
-            size: $item.size,
-            namespace: namespace))
-        .onChange(of: selection, perform: handleAnimations)
+        .tabfinityItem(style: LineItemStyle(localSelection: $localSelection, size: $item.size, namespace: namespace))
+        .onChange(of: selection, perform: handleAnimation)
     }
 }
 
 #Preview {
-    LampStyleExample()
+    LineStyleExample()
         .environmentObject(TabfinityItemSize())
 }
 
-extension LampStyleExample {
-    private func handleAnimations(_ newValue: Item) {
+extension LineStyleExample {
+    private func handleAnimation(_ newValue: Item) {
         withAnimation(.easeInOut) {
-            moveLamp = selection
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-            withAnimation(.easeInOut) {
-                showLight = selection
-            }
+            localSelection = selection
         }
     }
 }
-
-

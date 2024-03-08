@@ -20,7 +20,11 @@ public struct LampItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
     
     public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
         ZStack {
-            if isItemSelected(selector: moveLamp, icon: icon, title: title, color: color) {
+            if TabfinityItem.isItemSelected(
+                selector: moveLamp,
+                icon: icon,
+                title: title,
+                color: color) {
                 VStack {
                     Lamp()
                         .fill(Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -40,27 +44,28 @@ public struct LampItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .padding(.top, 3)
             }
-            .foregroundStyle(isItemSelected(selector: showLight,icon: icon, title: title, color: color) ? color : .gray)
+            .foregroundStyle(TabfinityItem.isItemSelected(
+                selector: showLight,
+                icon: icon,
+                title: title,
+                color: color) ? color : .gray)
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity)
             .background(
                 Light()
                     .fill(Color.yellow.opacity(0.4))
                     .frame(width: size.width / 1.5)
-                    .opacity(isItemSelected(selector: showLight,icon: icon, title: title, color: color) ? 1.0 : 0.0)
+                    .opacity(TabfinityItem.isItemSelected(
+                        selector: showLight,
+                        icon: icon,
+                        title: title,
+                        color: color) ? 1.0 : 0.0)
                     .padding(.top, 3)
             )
         }
     }
 }
 
-extension LampItemStyle {
-    private func isItemSelected(selector: TabfinityItem ,icon: String, title: String, color: Color ) -> Bool {
-        if selector.icon == icon && selector.title == title && selector.color == color {
-            return true
-        }
-        return false
-    }
-}
+
 
 
