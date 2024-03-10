@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TabfinityViewModifier<TabfinityItem: Tabbable>: ViewModifier {
+struct TabfinityViewModifier<TabfinityItem: Finitable>: ViewModifier {
     @EnvironmentObject private var selectionObject: TabfinitySelection<TabfinityItem>
     
     let item: TabfinityItem
@@ -24,7 +24,7 @@ extension View {
         Use this function to associate view with the specific item
         of the `Tabfinity`.
         */
-    public func tabfinityItem<TabfinityItem: Tabbable>(for item: TabfinityItem) -> some View {
+    public func tabfinityItem<TabfinityItem: Finitable>(for item: TabfinityItem) -> some View {
         return self.modifier(TabfinityViewModifier(item: item))
     }
 }

@@ -24,6 +24,7 @@ public struct Light: Shape {
 /**
  A lamp shape aligned inside the frame of the view containing it.
  */
+
 public struct Lamp: Shape {
     public func path(in rect: CGRect) -> Path {
         var path = Path()

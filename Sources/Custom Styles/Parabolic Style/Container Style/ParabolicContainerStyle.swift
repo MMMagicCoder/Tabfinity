@@ -9,6 +9,7 @@ import SwiftUI
   - size: The size of each tabfinity item. When the number of tabfinity items changes, the size automatically adapts to fit.
   - xAxis: It is used to determine the placement position of the parabolic shape.
  */
+
 public struct ParabolicContainerStyle: TabfinityContainerStyle {
     @Binding var size: CGSize
     @Binding var xAxis: CGFloat

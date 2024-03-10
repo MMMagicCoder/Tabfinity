@@ -6,13 +6,13 @@ import SwiftUI
  Implement this style using `TabfinityItem(style:)` function.
  
  - Parameters:
-    - moveLamp: A variable conforming to the `Tabbable` protocol, used for animating and moving the lamp shape to the selected item.
-    - showLight: A variable conforming to the `Tabbable` protocol, used for animating and moving the light shape to the selected item with a delay.
+    - moveLamp: A variable conforming to the `Finitable` protocol, used for animating and moving the lamp shape to the selected item.
+    - showLight: A variable conforming to the `Finitable` protocol, used for animating and moving the light shape to the selected item with a delay.
     - size: The size of each tabfinity item. When the number of tabfinity items changes, the size automatically adapts to fit.
     - namespace: A namespace used to create fantastic moving animations for the lamp shape.
  */
 
-public struct LampItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
+public struct LampItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
     @Binding var moveLamp: TabfinityItem
     @Binding var showLight: TabfinityItem
     @Binding var size: CGSize
@@ -44,7 +44,7 @@ public struct LampItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .padding(.top, 3)
             }
-            .foregroundStyle(TabfinityItem.isItemSelected(
+            .foregroundColor(TabfinityItem.isItemSelected(
                 selector: showLight,
                 icon: icon,
                 title: title,

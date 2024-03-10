@@ -23,7 +23,7 @@ import SwiftUI
  ```
  */
 
-public struct Tabfinity<TabfinityItem: Tabbable, Content: View>: View {
+public struct Tabfinity<TabfinityItem: Finitable, Content: View>: View {
     
     @EnvironmentObject var tabfinityItem: TabfinityItemSize
     

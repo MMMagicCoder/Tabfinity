@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TabfinityPreferenceKey<TabfinityItem: Tabbable>: PreferenceKey {
+struct TabfinityPreferenceKey<TabfinityItem: Finitable>: PreferenceKey {
     static var defaultValue: [TabfinityItem] {
         return .init()
     }

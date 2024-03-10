@@ -8,12 +8,12 @@ import SwiftUI
  - Note: Use this item style with `LampContainerStyle()` as it's container style is a good choice. 
  
  - Parameters:
-    - localSelection: A variable conforming to the `Tabbable` protocol, used for animating and moving the line shape to the selected item.
+    - localSelection: A variable conforming to the `Finitable` protocol, used for animating and moving the line shape to the selected item.
     - size: The size of each tabfinity item. When the number of tabfinity items changes, the size automatically adapts to fit.
     - namespace: A namespace used to create fantastic moving animations for the line shape.
  */
 
-public struct LineItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
+public struct LineItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
     @Binding var localSelection: TabfinityItem
     @Binding var size: CGSize
     var namespace: Namespace.ID
@@ -32,7 +32,7 @@ public struct LineItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
                     title: title,
                     color: color) ? 1.0 : 0)
         }
-        .foregroundStyle(TabfinityItem.isItemSelected(
+        .foregroundColor(TabfinityItem.isItemSelected(
             selector: localSelection,
             icon: icon,
             title: title,

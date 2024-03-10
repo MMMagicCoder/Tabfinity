@@ -9,7 +9,7 @@ import SwiftUI
  - Note: The `selectedIcon` property is optional, defaulting to the value of the `icon` property if not explicitly implemented.
  */
 
-public protocol Tabbable: Hashable {
+public protocol Finitable: Hashable {
     /// The name of the icon associated with the tab item.
     var icon: String { get }
     
@@ -29,7 +29,7 @@ public protocol Tabbable: Hashable {
     var selectedIcon: String { get }
 }
 
-public extension Tabbable {
+public extension Finitable {
     var selectedIcon: String {
         return self.icon
     }
@@ -42,7 +42,7 @@ public extension Tabbable {
      - Note: Ensure to update the localSelection value within the view where you apply this item style, using the `withAnimation()` function to trigger smooth animations.
      ```swift
      // Example usage:
-     public struct LineItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
+     public struct LineItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
          @Binding var localSelection: TabfinityItem
          public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
              VStack {

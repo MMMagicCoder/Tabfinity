@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum Item: Int, Tabbable {
+enum Item: Int, Finitable {
     case home, favorites, profile
     
     var icon: String {

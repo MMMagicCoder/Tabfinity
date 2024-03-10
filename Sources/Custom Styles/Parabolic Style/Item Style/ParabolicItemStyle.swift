@@ -6,11 +6,11 @@ import SwiftUI
  Implement this style using `TabfinityItem(style:)` function.
  
  - Parameters:
-    - localSelection: A variable conforming to the `Tabbable` protocol, used for animating and moving the parabolic shape to the selected item.
+    - localSelection: A variable conforming to the `Finitable` protocol, used for animating and moving the parabolic shape to the selected item.
     - size: The size of each tabfinity item. When the number of tabfinity items changes, the size automatically adapts to fit.
  */
 
-struct ParabolicItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
+struct ParabolicItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
     @Binding var localSelection: TabfinityItem
     @Binding var size: CGSize
     
@@ -37,7 +37,7 @@ struct ParabolicItemStyle<TabfinityItem: Tabbable>: TabfinityItemStyle {
                         title: title,
                         color: color) ? -50 : 0)
             }
-            .foregroundStyle(TabfinityItem.isItemSelected(
+            .foregroundColor(TabfinityItem.isItemSelected(
                 selector: localSelection,
                 icon: icon,
                 title: title,
