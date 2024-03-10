@@ -14,13 +14,22 @@ This library aims to enhance the flexibility of the standard `TabView` component
 
 ## Requirements
 <a id="requirements"></a>
+   - SwiftUI
+   - iOS 14.0 or above
 
 ## Installation
 <a id="installation"></a>
-
-To install this package,import 'https://github.com/mohammadmahdimoayeri/Tabfinity.git' in SPM.
+You can access Tabfinity through [Swift Package Manager](https://github.com/apple/swift-package-manager).
 ### Swift Package Manager (SPM)
 <a id="spm"></a>
+In xcode select:
+```
+File > Swift Packages > Add Package Dependency...
+```
+Then paste this URL:
+```
+https://github.com/mohammadmahdimoayeri/Tabfinity.git
+```
 
 ## Usage
 <a id="usage"></a>
