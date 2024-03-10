@@ -6,9 +6,13 @@ This library aims to enhance the flexibility of the standard `TabView` component
 
 ## Table of contents
    - Requirements
-   - Installation
-     - Swift Package Manager (SPM)  
+   - [Installation]("#Installation")
+     - Swift Package Manager (SPM)
+   - Usage
+     - Costumization
+   - Contribution 
 
 ## Installation
+<a id = "Installation"></a>
 
 To install this package,import 'https://github.com/mohammadmahdimoayeri/Tabfinity.git' in SPM.
