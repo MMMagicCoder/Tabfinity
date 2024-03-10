@@ -33,6 +33,58 @@ https://github.com/mohammadmahdimoayeri/Tabfinity.git
 
 ## Usage
 <a id="usage"></a>
+To start using the `Tabfinity`, you need to define an enumeration that conforms to the `Finitable` protocol:
+```swift
+enum Item: Int, Finitable {
+    case home, favorites, profile
+    
+    var icon: String {
+        switch self {
+        case .home: return "house"
+        case .favorites: return "heart"
+        case .profile: return "person"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .home: return "Home"
+        case .favorites: return "Favorites"
+        case .profile: return "Profile"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .home: return Color.red
+        case .favorites: return Color.blue
+        case .profile: return Color.green
+        }
+    }
+}
+```
+Afterward, you will be able to instantiate a Tabfinity:
+```swift
+struct ContentView: View {
+    @State private var selection: Item = .home
+    
+    var body: some View {
+        Tabfinity(selection: $selection) {
+            Text("First Tab")
+                .tabfinityItem(for: Item.home)
+            
+            Text("Second Tab")
+                .tabfinityItem(for: Item.favorites)
+            
+            Text("Third Tab")
+                .tabfinityItem(for: Item.profile)
+        }
+        .tabfinityContainer(style: DefaultContainerStyle())
+        .tabfinityItem(style: DefaultItemStyle())
+    }
+}
+```
+Following these steps, a tabfinity with the default style will be generated.
 
 ### Customization
 <a id="customization"></a>
