@@ -13,6 +13,6 @@ This library aims to enhance the flexibility of the standard `TabView` component
    - Contribution 
 
 ## Installation
-<a id="installation"></a>
+#"installation"
 
 To install this package,import 'https://github.com/mohammadmahdimoayeri/Tabfinity.git' in SPM.
