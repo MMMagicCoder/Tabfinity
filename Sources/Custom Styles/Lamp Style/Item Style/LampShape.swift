@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct Light: Shape {
-    func path(in rect: CGRect) -> Path {
+public struct Light: Shape {
+    public func path(in rect: CGRect) -> Path {
         var path = Path()
         let width = rect.size.width
         let height = rect.size.height
@@ -18,8 +18,8 @@ struct Light: Shape {
     }
 }
 
-struct Lamp: Shape {
-    func path(in rect: CGRect) -> Path {
+public struct Lamp: Shape {
+    public func path(in rect: CGRect) -> Path {
         var path = Path()
         let w = rect.size.width
         let h = rect.size.height

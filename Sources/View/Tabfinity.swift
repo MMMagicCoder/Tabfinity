@@ -86,17 +86,25 @@ extension Tabfinity {
                         title: item.title,
                         color: item.color,
                         isSelected: self.selectedItem.selection == item)
-                    .updateTabGeoSize(geo.size)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .updateTabGeoSize(geo.size)
+                    .onAppear {
+                        if item == self.tabs.first {
+                            tabfinityItem.axis = geo.frame(in: .global).midX - 16
+                        }
+                    }
                     .onTapGesture {
                         self.selectedItem.selection = item
                         self.selectedItem.objectWillChange.send()
+                        withAnimation(.easeInOut) {
+                            tabfinityItem.axis = geo.frame(in: .global).midX - 16
+                        }
                     }
                 }
             }
             .frame(maxWidth: .infinity)
         }
-        .onPreferenceChange(TabRectangleGeometrySizePreferencedKey.self, perform: { value in
+        .onPreferenceChange(TabfinityItemSizePreferenceKey.self, perform: { value in
             tabfinityItem.size = value
         })
     }
