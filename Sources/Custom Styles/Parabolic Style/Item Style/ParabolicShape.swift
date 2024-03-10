@@ -1,12 +1,8 @@
-//
-//  ParabolicShape.swift
-//  TabBar
-//
-//  Created by mohammadmahdi moayeri on 3/8/24.
-//
-
 import SwiftUI
 
+/**
+ A parabolic shape aligned inside the frame of the view containing it.
+ */
 public struct Parabolic: Shape {
     var size: CGSize
     var xAxis: CGFloat
