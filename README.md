@@ -88,6 +88,9 @@ Following these steps, a tabfinity with the default style will be generated.
 
 ### Customization
 <a id="customization"></a>
+The Tabfinity can be changed a lot. You can make it look however you want by using `TabfinityContainerStyle` and `TabfinityItemStyle`. These let you create your own unique tab bar designs. When you make custom styles, the tabfinity automatically puts them at the bottom.
+
+Once you've made your custom styles, you can easily use them in your tabfinity. Here's an example of what the default tab bar looks like, and another design you could make:
 
 ## Contribution
 <a id="contribution"></a>
