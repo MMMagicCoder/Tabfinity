@@ -95,6 +95,7 @@ Once you've made your custom styles, you can easily use them in your tabfinity. 
 
 ## Contribution
 <a id="contribution"></a>
+If you encounter any challenges, please feel free to [open an issue](https://github.com/MMMagicCoder/Tabfinity/issues/new). Additionally, we welcome and appreciate pull requests for any improvements or contributions.
 
 ## License
 <a id="license"></a>
