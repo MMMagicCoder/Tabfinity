@@ -46,8 +46,8 @@ public struct Tabfinity<TabfinityItem: Finitable, Content: View>: View {
         self.selectedItem = .init(selection: selection)
         self.content = content()
         
-        self.tabfinityItemStyle = .init(itemStyle: DefaultTabfinityItemStyle())
-        self.tabfinityContainerStyle = .init(containerStyle: DefaultTabfinityContainerStyle())
+        self.tabfinityItemStyle = .init(itemStyle: DefaultItemStyle())
+        self.tabfinityContainerStyle = .init(containerStyle: DefaultContainerStyle())
         
         self._tabs = .init(initialValue: .init())
     }

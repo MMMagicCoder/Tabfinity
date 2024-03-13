@@ -7,7 +7,7 @@ import SwiftUI
  It is used by default in the `TabBar` component.
  */
 
-public struct DefaultTabfinityContainerStyle: TabfinityContainerStyle {
+public struct DefaultContainerStyle: TabfinityContainerStyle {
     public func tabfinityContainer(with geometry: GeometryProxy, container: @escaping () -> AnyView) -> some View {
         VStack(spacing: 0.0) {
             Divider()
