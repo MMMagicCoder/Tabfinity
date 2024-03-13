@@ -28,6 +28,7 @@ public struct Tabfinity<TabfinityItem: Finitable, Content: View>: View {
     @EnvironmentObject var tabfinityItem: TabfinityItemSize
     
     private let selectedItem: TabfinitySelection<TabfinityItem>
+    private let animation: Binding<Animation>
     private let content: Content
     
     private var tabfinityItemStyle: AnyTabfinityItemStyle
@@ -42,8 +43,9 @@ public struct Tabfinity<TabfinityItem: Finitable, Content: View>: View {
      if they have `tabfinityItem(for:)` applied to them.
      */
 
-    public init(selection: Binding<TabfinityItem>, @ViewBuilder content: () -> Content) {
+    public init(selection: Binding<TabfinityItem>, animation: Binding<Animation> = .constant(.easeInOut) ,@ViewBuilder content: () -> Content) {
         self.selectedItem = .init(selection: selection)
+        self.animation = animation
         self.content = content()
         
         self.tabfinityItemStyle = .init(itemStyle: DefaultItemStyle())
@@ -96,7 +98,7 @@ extension Tabfinity {
                     .onTapGesture {
                         self.selectedItem.selection = item
                         self.selectedItem.objectWillChange.send()
-                        withAnimation(.easeInOut) {
+                        withAnimation(animation.wrappedValue) {
                             tabfinityItem.axis = geo.frame(in: .global).midX - 16
                         }
                     }

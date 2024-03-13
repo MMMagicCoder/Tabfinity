@@ -12,10 +12,6 @@ extension View {
     func updateTabGeoSize(_ size: CGSize) -> some View {
         preference(key: TabfinityItemSizePreferenceKey.self, value: size)
     }
-    
-//    func getGeoProxy(_ geo: GeometryProxy) -> GeometryProxy {
-//        
-//    }
 }
 
 class TabfinityItemSize: ObservableObject {
