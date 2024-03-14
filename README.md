@@ -89,9 +89,11 @@ Following these steps, a tabfinity with the default style will be generated.
 
 ### Customization
 <a id="customization"></a>
-The Tabfinity can be changed a lot. You can make it look however you want by using `TabfinityContainerStyle` and `TabfinityItemStyle`. These let you create your own unique tab bar designs. When you make custom styles, the tabfinity automatically puts them at the bottom.
+The Tabfinity can be changed a lot. You can make it look however you want by using `TabfinityContainerStyle` and `TabfinityItemStyle`. You can easily adjust the size and position of items using the `TabfinityItemSize` class. This class helps you find out how big items are and where they are placed, so you can customize them exactly how you want. These let you create your own unique tab bar designs. When you make custom styles, the tabfinity automatically puts them at the bottom. Explore the examples provided in this package to learn how to customize your tab bar effectively with Tabfinity. 
 
-Once you've made your custom styles, you can easily use them in your tabfinity. Here's an example of what the default tab bar looks like, and another design you could make:
+Once you've made your custom styles, you can easily use them in your tabfinity. Here's an example of what the default tab bar looks like, and some custom design you could use or make:
+
+![Show cases](https://github.com/MMMagicCoder/MMMagicCoder/blob/1a835aca4e1195cb64d540f2243d9ac949362651/Tabfinity/Show%20cases/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-03-11%20at%2019.43.21.png)
 
 ## Contribution
 <a id="contribution"></a>
