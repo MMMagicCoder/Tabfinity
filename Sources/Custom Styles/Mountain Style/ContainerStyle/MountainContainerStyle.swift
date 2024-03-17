@@ -10,8 +10,13 @@ import SwiftUI
   - xAxis: It is used to determine the placement position of the mountain shape.
  */
 public struct MountainContainerStyle: TabfinityContainerStyle {
-    @Binding public var size: CGSize
-    @Binding public var xAxis: CGFloat
+    @Binding var size: CGSize
+    @Binding var xAxis: CGFloat
+    
+    public init(size: Binding<CGSize>, xAxis: Binding<CGFloat>) {
+        self._size = size
+        self._xAxis = xAxis
+    }
     
     public func tabfinityContainer(with geometry: GeometryProxy, container: @escaping () -> AnyView) -> some View {
         container()

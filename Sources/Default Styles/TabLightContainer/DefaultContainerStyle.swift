@@ -8,6 +8,9 @@ import SwiftUI
  */
 
 public struct DefaultContainerStyle: TabfinityContainerStyle {
+    
+    public init(){}
+    
     public func tabfinityContainer(with geometry: GeometryProxy, container: @escaping () -> AnyView) -> some View {
         VStack(spacing: 0.0) {
             Divider()

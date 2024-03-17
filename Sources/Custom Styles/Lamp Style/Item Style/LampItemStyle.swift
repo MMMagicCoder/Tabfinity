@@ -13,10 +13,17 @@ import SwiftUI
  */
 
 public struct LampItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
-    @Binding public var moveLamp: TabfinityItem
-    @Binding public var showLight: TabfinityItem
-    @Binding public var size: CGSize
-    public var namespace: Namespace.ID
+    @Binding var moveLamp: TabfinityItem
+    @Binding var showLight: TabfinityItem
+    @Binding var size: CGSize
+    var namespace: Namespace.ID
+    
+    public init(moveLamp: Binding<TabfinityItem>, showLight: Binding<TabfinityItem>, size: Binding<CGSize>, namespace: Namespace.ID) {
+        self._moveLamp = moveLamp
+        self._showLight = showLight
+        self._size = size
+        self.namespace = namespace
+    }
     
     public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
         ZStack {

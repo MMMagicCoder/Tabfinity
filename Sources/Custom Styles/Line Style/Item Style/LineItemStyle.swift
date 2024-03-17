@@ -14,9 +14,15 @@ import SwiftUI
  */
 
 public struct LineItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
-    @Binding public var localSelection: TabfinityItem
-    @Binding public var size: CGSize
-    public var namespace: Namespace.ID
+    @Binding var localSelection: TabfinityItem
+    @Binding var size: CGSize
+    var namespace: Namespace.ID
+    
+    public init(localSelection: Binding<TabfinityItem>, size: Binding<CGSize>, namespace: Namespace.ID) {
+        self._localSelection = localSelection
+        self._size = size
+        self.namespace = namespace
+    }
     
     public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
         VStack {

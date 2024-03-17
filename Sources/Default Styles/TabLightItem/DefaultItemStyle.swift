@@ -7,6 +7,9 @@ import SwiftUI
  It is used by default in the `TabBar` component.
  */
 public struct DefaultItemStyle: TabfinityItemStyle {
+    
+    public init(){}
+    
     public func tabfinityItem(icon: String, selectedIcon: String, title: String, color: Color, isSelected: Bool) -> some View {
         VStack(spacing: 5.0) {
             Image(systemName: icon)

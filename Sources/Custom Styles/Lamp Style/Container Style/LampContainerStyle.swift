@@ -6,6 +6,9 @@ import SwiftUI
  Implement this style using `TabfinityContainer(style:)` function.
  */
 public struct LampContainerStyle: TabfinityContainerStyle {
+    
+    public init() { }
+    
     public func tabfinityContainer(with geometry: GeometryProxy, container: @escaping () -> AnyView) -> some View {
         container()
             .frame(height: 65)
