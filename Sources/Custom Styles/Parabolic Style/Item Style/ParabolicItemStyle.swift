@@ -11,8 +11,8 @@ import SwiftUI
  */
 
 public struct ParabolicItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
-    @Binding var localSelection: TabfinityItem
-    @Binding var size: CGSize
+    @Binding public var localSelection: TabfinityItem
+    @Binding public var size: CGSize
     
     public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
         GeometryReader { geo in

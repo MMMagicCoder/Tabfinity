@@ -11,8 +11,8 @@ import SwiftUI
  */
 
 public struct ParabolicContainerStyle: TabfinityContainerStyle {
-    @Binding var size: CGSize
-    @Binding var xAxis: CGFloat
+    @Binding public var size: CGSize
+    @Binding public var xAxis: CGFloat
     
     public func tabfinityContainer(with geometry: GeometryProxy, container: @escaping () -> AnyView) -> some View {
         container()

@@ -10,8 +10,8 @@ import SwiftUI
     - size: The size of each tabfinity item. When the number of tabfinity items changes, the size automatically adapts to fit.
  */
 public struct MountainItemStyle<TabfinityItem: Finitable>: TabfinityItemStyle {
-    @Binding var localSelection: TabfinityItem
-    @Binding var size: CGSize
+    @Binding public var localSelection: TabfinityItem
+    @Binding public var size: CGSize
     
     public func tabfinityItem(icon: String, title: String, color: Color, isSelected: Bool) -> some View {
         GeometryReader { geo in
