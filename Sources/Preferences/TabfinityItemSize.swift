@@ -17,4 +17,6 @@ extension View {
 public class TabfinityItemSize: ObservableObject {
     @Published public var size: CGSize = .zero
     @Published public var axis: CGFloat = 0.0
+    
+    public init() {}
 }
